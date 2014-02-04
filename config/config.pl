@@ -1,7 +1,7 @@
 +{
-    output_dir => '',  #relative to your home directory
+    output_dir => 'dev/tacata',  #relative to your home directory
 
-    google_username => '',
-    google_password => '',
-    spreadsheet_key => '',
+    google_username => 'you@google.com',
+    google_password => 'password',
+    spreadsheet_key => '0AgLBBnhg8gXSeE03WTRBMEdJeFTpRlFUQjRFFUo4OBc', 
 }

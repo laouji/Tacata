@@ -3,5 +3,5 @@
 
     google_username => 'you@google.com',
     google_password => 'password',
-    spreadsheet_key => '0AgLBBnhg8gXSeE03WTRBMEdJeFTpRlFUQjRFFUo4OBc', 
+    spreadsheet_key => '0AgLBBnhg8gXSeE03WTRBMEdJeFTpRlFUQjRFFUo4OBc',  #or id for new spreadsheets
 }

@@ -22,7 +22,23 @@ sub google_spreadsheet {
   );
   
   warn "\ngetting spreadsheet data";
-  my $spreadsheet = $service->spreadsheet({ key => $self->config->get('spreadsheet_key') });
+  #my $spreadsheet = $service->spreadsheet({ key => $self->config->get('spreadsheet_key') });
+  my $spreadsheet;
+  my @spreadsheets = $service->spreadsheets();
+
+  my $key_or_id = $self->config->get('spreadsheet_key');
+  foreach my $sheet (@spreadsheets) {
+      if ($sheet->key eq $key_or_id ) {
+          # get spreadsheet with key for old style spreadsheet
+          $spreadsheet = $sheet;
+          last;
+      } elsif ($sheet->id =~ m/$key_or_id$/) {
+          # new spreadsheets don't have keys only ids
+          $spreadsheet = $sheet;
+          last;
+      }
+  }
+
   unless ($spreadsheet) {
       die "failed to get spreadsheet: check permissions";
   }
